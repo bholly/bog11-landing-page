@@ -1,0 +1,21 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(82, 255, 186, 0.14), transparent 32%),
+    radial-gradient(circle at top right, rgba(126, 255, 138, 0.12), transparent 28%),
+    linear-gradient(180deg, #041109 0%, #020804 100%);
+  color: #efffea;
+  font-family: 'Avenir Next', 'Segoe UI', 'Trebuchet MS', sans-serif;
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}

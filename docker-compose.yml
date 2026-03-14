@@ -3,6 +3,16 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-      - "8080:80"
     restart: unless-stopped
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.bog11-landing.rule=Host(`bog11.cloud`) || Host(`www.bog11.cloud`)
+      - traefik.http.routers.bog11-landing.entrypoints=websecure
+      - traefik.http.routers.bog11-landing.tls.certresolver=letsencrypt
+      - traefik.http.services.bog11-landing.loadbalancer.server.port=80
+    networks:
+      - traefik-proxy
+
+networks:
+  traefik-proxy:
+    external: true
